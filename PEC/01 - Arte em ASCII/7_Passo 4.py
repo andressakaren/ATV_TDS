@@ -1,0 +1,7 @@
+print("O jeito difícil...")
+print("##############################")
+print("O jeito fácil...")
+print("#" * 30)
+print("")
+print("/\   " * 10)
+print("   \/" * 10)

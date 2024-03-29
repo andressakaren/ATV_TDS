@@ -1,0 +1,11 @@
+a = input().strip()
+b = input().strip()
+
+print(f'A soma dos números é: {float(a) + float(b)}')
+print(f'A concatenação das strings é: {float(a):.1f}' + b)
+print(f'A multiplicação dos números é: {float(a) * float(b)}')
+print(f'A multiplicação como strings é: {str(float(a)) * int(b)}')
+print(f'A divisão dos números é: {float(a)/float(b)}')
+print(f'A divisão inteira dos números é: {float(a) // float(b)}')
+print(f'A exponenciação: {float(a) ** float(b)}')
+print(f'O módulo (resto) é: {float(a) % float(b)}')
