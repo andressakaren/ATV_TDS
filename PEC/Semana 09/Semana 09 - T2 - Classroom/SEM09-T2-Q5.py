@@ -20,7 +20,7 @@ def main():
     q5 = input("Já trabalhou com a vítima ? S ou N: " ).upper().strip()
     
     total = qst(q1, q2, q3, q4, q5)
-    print(f'O resultado do questionário foi decretou: ')
+    print(f'O resultado do questionário decretou: ')
     if total == 2:
         print('Suspeito')
     elif total == 3 or total == 4:
