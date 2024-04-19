@@ -1,0 +1,44 @@
+.linha1 :nth-child(even) {
+    background-color: black;
+}
+
+.dama1 :nth-child(even) {
+    background-image: url(imagem/imagem_2024-04-09_191123306-removebg-preview\ \(2\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dama2 :nth-child(odd) {
+    background-image: url(imagem/imagem_2024-04-09_191123306-removebg-preview\ \(2\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dama3 :nth-child(odd) {
+    background-image: url(imagem/imagem_2024-04-09_191238392-removebg-preview\ \(1\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dama4 :nth-child(even) {
+    background-image: url(imagem/imagem_2024-04-09_191238392-removebg-preview\ \(1\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.linha2 :nth-child(odd) {
+    background-color: black;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    height: 80vh;
+    margin: auto;
+
+}
+
+td {
+    border: 3px solid black;
+}

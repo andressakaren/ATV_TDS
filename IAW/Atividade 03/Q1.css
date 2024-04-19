@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to left, #b3cce2, #D9CCC1);
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: .5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+.format_color_h1_h2 {
+    background-color: #005eb0;
+    color: #D9CCC1;
+}
+
+p {
+    font-size: 1.0rem;
+    color: #024059;
+}
+
+.cite {
+    font-weight: bold;
+}
+
+.blockquote {
+    font-family: "Tilt Neon";
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.autor_postagem {
+    text-align: right;
+}
+
+.data {
+    text-align: left;
+    font-size: .8rem;
+}
+
+.formatação_autor_data {
+    color: darkslategray;
+    font-style: italic;
+}
+
+.strikethrough {
+    position: relative;
+}
+
+.strikethrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 1px solid;
+    border-color: inherit;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}

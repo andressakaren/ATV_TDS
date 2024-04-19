@@ -1,0 +1,16 @@
+body {
+    background-image: radial-gradient(green 30%, magenta);
+    height: 100vh;
+    font-family: arial;
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+}
+
+p {
+    text-align: justify;
+    margin: 10px;
+    color: aliceblue;
+}

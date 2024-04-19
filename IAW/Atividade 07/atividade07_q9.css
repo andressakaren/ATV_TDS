@@ -1,0 +1,39 @@
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+}
+
+th {
+    border: 3px solid black;
+    height: 40px;
+}
+
+td {
+    border: 3px solid black;
+    padding: 2%;
+    margin: 0%;
+    text-align: center;
+}
+
+.linha_par :nth-child(even) {
+    background-color: black;
+    color: white;
+}
+
+.linha_par :hover {
+    background-color: white;
+    color: black;
+}
+
+.linha_impar :nth-child(odd) {
+    background-color: black;
+    color: white;
+}
+
+.linha_impar :hover {
+    background-color: white;
+    color: black;
+}

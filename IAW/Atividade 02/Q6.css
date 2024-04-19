@@ -1,0 +1,29 @@
+/* 
+Color Theme Swatches in Hex // https://color.adobe.com/pt/explore
+.Blue-glitter-banner-1-hex { color: #025159; }
+.Blue-glitter-banner-2-hex { color: #3E848C; }
+.Blue-glitter-banner-3-hex { color: #7AB8BF; }
+.Blue-glitter-banner-4-hex { color: #C4EEF2; }
+.Blue-glitter-banner-5-hex { color: #A67458; }
+*/
+
+body {
+    font-family: arial;
+    background-image: linear-gradient(to left, #7AB8BF 60%, #C4EEF2);
+}
+
+h1 {
+    color: #A67458;
+}
+
+h2 {
+    color: #025159;
+}
+
+p {
+    color: #3E848C;
+}
+
+.centralizado {
+    text-align: center;
+}

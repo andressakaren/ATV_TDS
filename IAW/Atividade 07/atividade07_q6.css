@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border: 1px solid #111;
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+}
+
+td,
+th {
+    padding: 2%;
+}
+
+.main_txt {
+    background-color: #111;
+    color: #febe01;
+}
+
+td:nth-child(n) {
+    background-color: #fde9ad;
+}
+
+td:hover {
+    color: #febe01;
+    background-color: #111;
+}
+
+th:hover {
+    color: #111;
+    background-color: #febe01;
+}
+
+.top {
+    padding-top: 0%;
+    padding-left: 0%;
+}
+
+.mid {
+    padding-left: 0%;
+}
+
+.bot {
+    padding-bottom: 0%;
+    padding-left: 0%;
+}

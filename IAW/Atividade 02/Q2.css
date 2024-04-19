@@ -1,0 +1,16 @@
+body {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    height: 100vh;
+    font-family: arial;
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+}
+
+p {
+    text-align: justify;
+    margin: 10px;
+    color: aliceblue;
+}

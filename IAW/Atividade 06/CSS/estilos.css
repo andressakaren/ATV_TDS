@@ -1,0 +1,96 @@
+body {
+    background-color: black;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h4 {
+    color: white;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: separate;
+    background-color: rgba(139, 0, 0, .5);
+    width: 91%;
+    color: #333;
+    margin: 10px;
+}
+
+.paragrafo {
+    color: white;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr {
+    background-color: #ddd;
+}
+
+tr:hover {
+    background-color: #ccc;
+}
+
+.seta_paginas>li:nth-child(1) {
+    list-style-image: url(/seta/arrow-down-right-svgrepo-com.svg);
+}
+
+.seta_paginas>li:nth-child(2) {
+    list-style-image: url(/seta/arrow-down-right-svgrepo-com.svg);
+}
+
+.seta_para_top {
+    list-style-image: url(/seta/arrow-up-svgrepo-com.svg);
+}
+
+.seta_para_baixo {
+    list-style-image: url(/seta/arrow-sm-down-svgrepo-com.svg);
+}
+
+.tamanho_top_bot {
+    font-size: 13px;
+}
+
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(175, 54, 54);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(74, 120, 136);
+    text-decoration: underline;
+}
+
+a:active {
+    color: lightblue;
+    text-decoration: underline;
+}
+
+.rede_social {
+    font-size: 13px;
+}
+
+.rede_social>li:nth-child(1) {
+    list-style-image: url(/rede_social/instagram-svgrepo-com.svg);
+}
+
+.rede_social>li:nth-child(2) {
+    list-style-image: url(/rede_social/github-color-svgrepo-com.svg);
+}

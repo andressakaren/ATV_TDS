@@ -1,0 +1,33 @@
+body {
+  font-family: arial;
+}
+
+.tabela01 {
+  border: 1px solid #111;
+  width: 60%;
+  height: 40vh;
+  margin: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #fae2b1;
+}
+
+th,
+td {
+  border: 1px solid #111;
+}
+
+.txt_main_table {
+  background-color: #111;
+  color: #febe01;
+}
+
+td:hover {
+  background-color: #febe01;
+}
+
+th:hover {
+  color: #111;
+  background-color: #febe01;
+}

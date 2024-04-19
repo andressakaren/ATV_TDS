@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - HTML e CSS</title>
+    <link rel="stylesheet" href="/CSS/estilos.css">
+    <link rel="stylesheet" href="/CSS_box/box.css">
+</head>
+
+<body>
+    <h1 id="top">HTML &lt;a&gt; Tag </h1>
+
+    <div class="tamanho_top_bot">
+        <ul class="seta_para_baixo">
+            <li><a href="#bot"><em>Vá para o final da Página</em></a></li>
+        </ul>
+    </div>
+    <h2>Definition and Usage</h2>
+
+    <div class="paragrafo">
+        <p>The &lt;a&gt; tag defines a hyperlink, which is used to link from one page to another.</p>
+
+        <p>The most important attribute of the &lt;a&gt; element is the href attribute, which indicates the link's
+            destination.
+            By default, links will appear as follows in all browsers:
+        </p>
+    </div>
+
+    <div class="paragrafo">
+        <ul class="lista_paragrafo">
+            <li>An unvisited link is underlined and blue;
+            <li>A visited link is underlined and purple;
+            <li>An active link is underlined and red;
+        </ul>
+
+    </div>
+
+    <h2>Tips and Notes</h2>
+
+    <div class="paragrafo">
+        <p>Tip: If the &lt;a&gt; tag has no &lt;href&gt; attribute, it is only a placeholder for a hyperlink.
+        </p>
+        <p>Tip: A linked page is normally displayed in the current browser window, unless you specify another target.
+        </p>
+        <p>Tip: Use CSS to style links: CSS Links and CSS Buttons.
+        </p>
+    </div>
+
+    <h2>Browser Support</h2>
+
+    <div>
+        <table>
+            <tr>
+                <th>Element</th>
+                <th><img src="imagens/compatible_chrome.png"></th>
+                <th><img src="imagens/compatible_edge.png"></th>
+                <th><img src="imagens/compatible_firefox.png"></th>
+                <th><img src="imagens/compatible_opera.png"></th>
+                <th><img src="imagens/compatible_safari.png"></th>
+            </tr>
+            <tr>
+                <td>&lt;a&gt;</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+    </div>
+
+    <h4 id="bot"><em>Páginas:</em></h4>
+
+    <div>
+        <ul class="seta_paginas">
+            <li><a href="pg2.html">Página 2</a></li>
+            <li><a href="pg3.html">Página 3</a></li>
+        </ul>
+    </div>
+
+    <div class="paragrafo">
+        <p>Rede Social:</p>
+    </div>
+
+    <div class="paragrafo">
+        <ul class="rede_social">
+            <li><a href="https://www.instagram.com/ddl_andressa/" target="_blank">ddl_andressa</a></li>
+            <li><a href="https://github.com/andressakaren" target="_blank">github/andressakaren</a></li>
+        </ul>
+    </div>
+
+    <div class="tamanho_top_bot">
+        <ul class="seta_para_top">
+            <li><a href="#top"><em>Vá para o topo da Página</em></a></li>
+        </ul>
+    </div>
+
+<a href="#" onclick="escurecerPagina()">Escurecer</a>
+<a href="#" onclick="clarearPagina()">Clarear</a>
+    <script>
+        function escurecerPagina() {
+            document.body.style.backgroundColor = "black"
+        }
+        function clarearPagina() {
+            document.body.style.backgroundColor = "gray"
+        }
+    </script>
+
+</body>
+
+</html>

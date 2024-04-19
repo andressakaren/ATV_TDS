@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Tabelas</h1>
+    <h2>Tabelas simples</h2>
+    <table class="tabela1">
+        <tr class="linha">
+            <td>Linha 1, coluna 1</td>
+            <td>Linha 1, coluna 2</td>
+            <td>Linha 1, coluna 3</td>
+        </tr>
+        <tr>
+            <td>Linha 2, coluna 1</td>
+            <td>Linha 2, coluna 2</td>
+            <td>Linha 2, coluna 3</td>
+        </tr>
+        <tr>
+            <td>Linha 3, coluna 1</td>
+            <td>Linha 3, coluna 2</td>
+            <td>Linha 3, coluna 3</td>
+        </tr>
+    </table>
+
+    <h2>Tabelas de preços</h2>
+    <table class="compras">
+        <tr>
+            <th>#</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+        <tr class="impar">
+            <td class="numero-linha">1</td>
+            <td>Arroz</td>
+            <td class="preco">R$ 5,00</td>
+        </tr>
+        <tr class="par">
+            <td class="numero-linha">2</td>
+            <td>Frango</td>
+            <td class="preco">R$ 35,00</td>
+        </tr>
+        <tr class="impar">
+            <td class="numero-linha">3</td>
+            <td>Feijão</td>
+            <td class="preco">R$ 8,00</td>
+        </tr>
+        <tr class="par">
+            <td class="numero-linha">4</td>
+            <td>Uva</td>
+            <td class="preco">R$ 15,00</td>
+        </tr>
+        <tr class="impar">
+            <td class="numero-linha">5</td>
+            <td>Banana</td>
+            <td class="preco">R$ 6,50</td>
+        </tr>
+    </table>
+    <h2>Tabelas de preços (mais completa)</h2>
+    <table class="compras">
+        <thead class="">
+            <tr>
+                <th>#</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="impar">
+                <td class="numero-linha">1</td>
+                <td>Arroz</td>
+                <td class="preco">R$ 5,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="par">
+                <td class="numero-linha">2</td>
+                <td>Frango</td>
+                <td class="preco">R$ 35,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="impar">
+                <td class="numero-linha">3</td>
+                <td>Feijão</td>
+                <td class="preco">R$ 8,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="par">
+                <td class="numero-linha">4</td>
+                <td>Uva</td>
+                <td class="preco">R$ 15,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="impar">
+                <td class="numero-linha">5</td>
+                <td>Banana</td>
+                <td class="preco">R$ 6,50</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="par">
+                <td class="numero-linha">6</td>
+                <td>Maçã</td>
+                <td class="preco">R$ 10,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="impar">
+                <td class="numero-linha">7</td>
+                <td>Melão</td>
+                <td class="preco">R$ 12,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="par">
+                <td class="numero-linha">8</td>
+                <td>Abacaxi</td>
+                <td class="preco">R$ 15,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+            <tr class="impar">
+                <td class="numero-linha">9</td>
+                <td>Melão</td>
+                <td class="preco">R$ 12,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+
+            </tr>
+            <tr class="par">
+                <td class="numero-linha">10</td>
+                <td>Abacaxi</td>
+                <td class="preco">R$ 15,00</td>
+                <td class="acoes">
+                    <a href="#">Editar</a>
+                    <a href="#">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class = "paginas">
+                    <a href="#">1 2 3 ... 30</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

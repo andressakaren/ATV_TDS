@@ -1,0 +1,66 @@
+.ordenada {
+    list-style: upper-roman;
+    line-height: 1.2;
+}
+
+.emojis {
+    list-style-type: square;
+    line-height: 1.5;
+}
+
+.placas {
+    line-height: 1.5;
+}
+
+.placas>li:nth-child(1) {
+    list-style-image: url(imagens/placa_pare.svg.svg);
+}
+
+.placas>li:nth-child(2) {
+    list-style-image: url(imagens/bifurcacao.svg.svg);
+}
+
+.placas>li:nth-child(3) {
+    list-style-image: url(imagens/faixa_pedestre.svg.svg);
+}
+
+.placas>li:nth-child(4) {
+    list-style-image: url(imagens/seta_direita.svg.svg);
+}
+
+.placas>li:nth-child(5) {
+    list-style-image: url(imagens/triangulo.svg.svg);
+}
+
+.titulo {
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.capitulos{
+    line-height: 1.5;
+    list-style: upper-roman;
+}
+
+.topicos{
+    list-style: disc;
+}
+
+
+h1 {
+    background-image: linear-gradient(to left, lightcoral, gray);
+    color: lightgoldenrodyellow;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    padding: 2.5%;
+}
+
+h2 {
+    background-image: linear-gradient(to left, lightcoral, gray);
+    color: lightgoldenrodyellow;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    padding: 1%;
+    
+}

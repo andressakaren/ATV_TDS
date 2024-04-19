@@ -1,0 +1,61 @@
+body {
+    font-family: arial;
+}
+.tabela1 {
+    border: 1px solid black;
+    width : 100%;
+    height: 40vh;
+}
+
+.tabela1 td  {
+    border: 1px solid gray; 
+
+}
+
+.compras {
+    border: 1px solid black;
+    width : 50%;
+    height: 40vh;
+    margin: auto
+}
+
+.compras td, .compras th { 
+   padding: 1%;
+
+}
+
+.compras th {
+    background-color: black;
+    color: white;
+}
+
+.par {
+    background-color: lightgray;
+}
+
+.impar {
+    background-color: #eee;
+}
+
+.preco {
+    text-align: right;
+}
+
+.numero-linha {
+    text-align: center;
+}
+
+
+.acoes, .paginas {
+    text-align: center;
+}
+
+a:link, a.visited {
+    color: darkslategray;
+    text-decoration: none;
+}
+
+a:hover, a.active {
+    color: #4f4f4f;
+    text-decoration: underline;
+}
