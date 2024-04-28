@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(imagens/luzes-de-neon-gradientes-abstratas.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: "Montserrat";
+    color: #EAEAEA;
+}
+
+.cabecalho {
+    padding: 40px;
+    display: grid;
+    background: rgba(46, 28, 43, 0.4);
+    max-width: 1000px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.cabecalho h1 {
+    font-family: "Oswald", sans-serif;
+    padding: 20px;
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.cabecalho p {
+    grid-column: 1;
+    padding: 20px;
+    color: #EAEAEA;
+    text-align: justify;
+}
+
+.cabecalho-botao {
+    color: #EAEAEA;
+    background: #893168;
+    justify-self: center;
+    align-self: center;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.conteudo-k {
+    max-width: 1000px;
+    padding: 40px;
+    background: rgba(46, 28, 43, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    max-height: 350px;
+}
+
+.conteudo-k img {
+    width: 264px;
+    height: 300px;
+    border-radius: 20px;
+    place-self: center;
+}
+
+.texto {
+    display: grid;
+    text-align: justify;
+    color: #EAEAEA;
+}
+
+.texto p,
+.texto a {
+    padding: 20px;
+}
+
+.texto h2 {
+    font-family: "Oswald";
+    padding: 20px;
+    color: #EAEAEA;
+    text-transform: uppercase;
+    justify-self: center;
+}
+.botao{
+    display: flex;
+    place-content: center;
+    gap: 40px;
+}
+
+.conteudo-botao {
+    color: #EAEAEA;
+    background: #893168;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    place-self: center;
+}
+
+
+.conteudo-l {
+    max-width: 1000px;
+    padding: 40px;
+    background: rgba(46, 28, 43, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    max-height: 350px;
+}
+
+.conteudo-l img {
+    width: 264px;
+    height: 300px;
+    border-radius: 20px;
+    place-self: center;
+}
+
+.conteudo-l .texto {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+.rodape {
+    font-family: "Montserrat";
+    background: rgba(46, 28, 43, 0.4);
+    width: 100%;
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.rodape a {
+    color: #EAEAEA;
+    border: 1px solid #EAEAEA;
+    padding: 10px;
+    background: rgba(46, 28, 43, 0.8);
+    border-radius: 5px;
+}

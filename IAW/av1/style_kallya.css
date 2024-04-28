@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(imagens/luzes-de-neon-gradientes-abstratas.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: "Montserrat";
+    color: #EAEAEA;
+}
+
+.cabecalho {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(46, 28, 43, 0.4);
+    max-width: 1000px;
+    margin-top: 20px;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.cabecalho h1 {
+    font-family: "Oswald", sans-serif;
+    padding: 20px;
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.cabecalho p {
+    grid-column: 1;
+    grid-row: auto;
+    padding: 20px;
+    color: #EAEAEA;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.cabecalho img {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    place-self: center;
+}
+
+.conteudo {
+    background: rgba(46, 28, 43, 0.4);
+    display: grid;
+    border-radius: 20px;
+    max-height: 700px;
+}
+
+.texto {
+    max-width: 1000px;
+    padding: 40px;
+    
+}
+
+.texto h2 {
+    font-family: "Oswald", sans-serif;
+    padding: 20px;
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.texto p {
+    font-family: "Montserrat";
+    padding: 0px 20px;
+    color: #EAEAEA;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.imagens {
+    max-width: 1000px;
+    padding: 0px 20px 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 20px;
+    max-height: 350px;
+    gap: 70px;
+}
+
+.imagens img {
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    place-self: center;
+}
+
+.rodape {
+    background: rgba(46, 28, 43, 0.4);
+    width: 100%;
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+.rodape a {
+    border: 1px solid rgb(46, 28, 43);
+    padding: 10px;
+    background: rgba(46, 28, 43, 0.8);
+    color: #EAEAEA;
+    border-radius: 5px;
+}
