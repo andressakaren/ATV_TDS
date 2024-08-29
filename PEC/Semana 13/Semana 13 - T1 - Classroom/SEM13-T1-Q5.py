@@ -1,41 +1,25 @@
-#INCOMPLETA
-
-
-# Leia duas listas A e B contendo 25 elementos inteiros cada, gerar e imprimir uma lista C de 50 elementos, cujos elementos sejam a intercalação dos elementos de A e B.
-def lista_a(n):
-    lista_a = []
+def ler_lista(n):
+    lista = []
     for i in range(n):
-        num = int(input())
-        lista_a.append(num)
-    return lista_a
+        num = int(input(f'Digite o {i + 1}° número: '))
+        lista.append(num)
+    return lista
 
-def lista_b(n):
-    lista_b = []
-    for i in range(n):
-        num = int(input())
-        lista_b.append(num)
-    return lista_b
+def intercalar(listaA, listaB):
+    lista_c = []
+    for i in range(len(listaA)): # ou len(listaB)
+        lista_c.append(listaA[i])
+        lista_c.append(listaB[i])
+    return lista_c
             
 def main():
-    lista_C = []
-    lista_A = lista_a(2)
-    lista_B = lista_b(2)
+    lista_A = ler_lista(25)
+    lista_B = ler_lista(25)
+    lista_C = intercalar(lista_A, lista_B)
     
-    for i in range(4):
-        if i == 0:
-            lista_C.insert(i, lista_A[i])
-        # else: 
-        #     if i % 2 != 0:
-        #         lista_C.insert(i, lista_A[i])
-        #     else:    
-        #         lista_C.insert(i, lista_B[i])
-                
-        # elif i % 2 != 0:
-        #     lista_C.insert(i, lista_B[i])
-        # else:
-        #     lista_C.insert(i, lista_A[i])
-    print(lista_A)
-    print(lista_B)
-    print(lista_C)
+    print(f'A lista A é: {lista_A}')
+    print(f'A lista B é: {lista_B}')
+    print(f'A lista intercalada entre A e B é: {lista_C}')
+    
 if __name__ == '__main__':
     main()
