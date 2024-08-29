@@ -1,6 +1,6 @@
 def notasAlunos():
     lista = []
-    for i in range(100):
+    for i in range(50):
         num = float(input())
         lista.append(num)
     return lista
