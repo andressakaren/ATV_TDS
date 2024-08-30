@@ -1,18 +1,20 @@
 def ler_valores(n):
     lista = []
     for i in range(n):
-        valor = input(f'Digite o {i + 1}° número: ').strip()
+        valor = input(f'Digite o {i + 1}° valor: ').strip()
         lista.append(valor)
     return lista
 
-def esta_ordenada(lista, lista_ordenada):
-    return lista == lista_ordenada
+def esta_ordenada(lista):
+    for i in range(len(lista) - 1):
+        if lista[i] > lista[i + 1]:
+            return False
+    return True # Só False se pelo menos um for menor que o próximo, True: valor PADRÃO.
 
 def main():
     n = int(input('Digite o valor da constante: '))
     lista = ler_valores(n)
-    lista_ordenada = sorted(lista)
-    conferencia = esta_ordenada(lista, lista_ordenada)
+    conferencia = esta_ordenada(lista)
     
     if conferencia:
         print('LISTA ORDENADA')
