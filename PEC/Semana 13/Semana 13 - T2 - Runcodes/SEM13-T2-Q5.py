@@ -1,8 +1,16 @@
 def ler_valores(n):
     lista = []
     for i in range(n):
-        valor = input().strip()
-        lista.append(valor)
+        valor = input().strip()  
+        try:
+            num = int(valor)
+            lista.append(num)
+        except ValueError:
+            try:
+                num = float(valor)
+                lista.append(num)
+            except ValueError:
+                lista.append(valor)
     return lista
 
 def esta_ordenada(lista):
