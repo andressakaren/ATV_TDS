@@ -1,18 +1,12 @@
-# INCOMPLETA
-
-def ler_nomes(n):
+def ler_dados(n):
     lista_nomes = []
-    for i in range(n):
-        nome = input().strip()
-        lista_nomes.append(nome)
-    return lista_nomes
-
-def ler_alturas(n):
     lista_alturas = []
     for i in range(n):
-        altura = input()
+        nome = input().strip()
+        altura = float(input())
+        lista_nomes.append(nome)
         lista_alturas.append(altura)
-    return lista_alturas
+    return lista_nomes, lista_alturas
 
 def media_altura(lista):
     media = sum(lista)/len(lista)
@@ -20,8 +14,7 @@ def media_altura(lista):
 
 def main():
     qtdJogadores = 12
-    lista_nomes = ler_nomes(qtdJogadores)
-    lista_alturas = ler_alturas(qtdJogadores)
+    lista_nomes, lista_alturas = ler_dados(qtdJogadores)
     media = media_altura(lista_alturas)
     
     maiorAltura = max(lista_alturas)
