@@ -15,16 +15,16 @@ def comprimento(lista):
 def inverter(lista):
     lista_invertida = []
     for i in lista:
-        lista_invertida.insert(-1-i, i)
+        lista_invertida.insert(0, i)
     return lista_invertida
 
 def minimo(lista):
-    menor = 0
-    maior = 0
+    menor = lista[0]
     for i in lista:
-        if i > menor:
+        if i < menor:
             menor = i      
-    
+    return menor
+
 def maximo(lista):
     maior = 0
     for i in lista:
@@ -42,14 +42,14 @@ def main():
     lista = ler_itens()
     numItens = comprimento(lista)
     listInvert = inverter(lista)
-    # numMenor = 
+    numMenor = minimo(lista)
     numMaior = maximo(lista)
     listSoma = soma(lista)
     
     print(lista)
     print(numItens)
     print(listInvert)
-    # print(numMenor)
+    print(numMenor)
     print(numMaior)
     print(listSoma)
     
