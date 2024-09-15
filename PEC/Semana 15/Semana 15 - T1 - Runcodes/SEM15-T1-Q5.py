@@ -1,3 +1,5 @@
+# incompleta
+
 def carrega_cidades():
     resultado = []
     with open('cidades.csv', 'r', encoding='utf-8') as arquivo:
@@ -9,11 +11,12 @@ def carrega_cidades():
     arquivo.close()
     return resultado
 
-def aniversario_cidades(dia, mes, cidades):
+def populacao_maior_aniversario(mes, populacao, cidades):
     lista_cidades_encontradas = []
     for cidade in cidades:
-        if cidade[3] == dia and cidade[4] == mes:
-            lista_cidades_encontradas.append(f'{cidade[2]}({cidade[0]})')          
+        if cidade[5] > populacao and cidade[4] == 4:
+            # Penedo(AL) tem 59020 habitantes e faz aniversário em 12 de abril.
+            lista_cidades_encontradas.append(f'{cidade[2]}({cidade[0]}) tem {cidade[5]} habitantes e faz aniversário em {cidade[3]} de {mes_por_extenso(mes).lower()}.')          
     return lista_cidades_encontradas
 
 def mes_por_extenso(mes):
@@ -24,12 +27,12 @@ def mes_por_extenso(mes):
 def main():
     cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
     
-    dia = int(input())
     mes = int(input())
+    populacao = int(input())
+  
+    encontrados = populacao_maior_aniversario(mes, populacao, cidades)
     
-    encontrados = aniversario_cidades(dia, mes, cidades)
-    
-    print(f'CIDADES QUE FAZEM ANIVERSÁRIO EM {dia} DE {mes_por_extenso(mes).upper()}:')
+    print(f'CIDADES COM MAIS DE {populacao} HABITANTES E ANIVERSÁRIO EM {mes_por_extenso(mes).upper()}:')
     for encontrado in encontrados:
         print(encontrado)
 

@@ -9,27 +9,22 @@ def carrega_cidades():
     arquivo.close()
     return resultado
 
-def aniversario_cidades(dia, mes, cidades):
+def populacao_maior(populacao, cidades):
     lista_cidades_encontradas = []
     for cidade in cidades:
-        if cidade[3] == dia and cidade[4] == mes:
-            lista_cidades_encontradas.append(f'{cidade[2]}({cidade[0]})')          
+        if cidade[5] > populacao:
+            # IBGE: 292740 - Salvador(BA) - POPULAÇÃO: 2892625
+            lista_cidades_encontradas.append(f'IBGE: {cidade[1]} - {cidade[2]}({cidade[0]}) - POPULAÇÃO: {cidade[5]}')          
     return lista_cidades_encontradas
-
-def mes_por_extenso(mes):
-    meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-    
-    return meses[mes - 1] # ex: se mes 1, o indice será 1 - 1 = 0. 
 
 def main():
     cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
     
-    dia = int(input())
-    mes = int(input())
+    populacao = int(input())
+  
+    encontrados = populacao_maior(populacao, cidades)
     
-    encontrados = aniversario_cidades(dia, mes, cidades)
-    
-    print(f'CIDADES QUE FAZEM ANIVERSÁRIO EM {dia} DE {mes_por_extenso(mes).upper()}:')
+    print(f'CIDADES COM MAIS DE {populacao} HABITANTES:')
     for encontrado in encontrados:
         print(encontrado)
 
