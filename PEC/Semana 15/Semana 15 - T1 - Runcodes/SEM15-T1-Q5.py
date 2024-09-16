@@ -1,4 +1,4 @@
-# incompleta
+
 
 def carrega_cidades():
     resultado = []
@@ -14,7 +14,7 @@ def carrega_cidades():
 def populacao_maior_aniversario(mes, populacao, cidades):
     lista_cidades_encontradas = []
     for cidade in cidades:
-        if cidade[5] > populacao and cidade[4] == 4:
+        if cidade[5] > populacao and cidade[4] == mes:
             # Penedo(AL) tem 59020 habitantes e faz aniversário em 12 de abril.
             lista_cidades_encontradas.append(f'{cidade[2]}({cidade[0]}) tem {cidade[5]} habitantes e faz aniversário em {cidade[3]} de {mes_por_extenso(mes).lower()}.')          
     return lista_cidades_encontradas
