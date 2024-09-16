@@ -20,7 +20,7 @@ def populacao_maior(populacao, cidades):
 def main():
     cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
     
-    populacao = int(input())
+    populacao = int(input("Digite a população: "))
   
     encontrados = populacao_maior(populacao, cidades)
     
