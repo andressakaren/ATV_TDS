@@ -24,8 +24,8 @@ def mes_por_extenso(mes):
 def main():
     cidades = carrega_cidades() # tem a lista de todas as cidades com as informações
     
-    dia = int(input())
-    mes = int(input())
+    dia = int(input("Digite o dia: "))
+    mes = int(input("Digite o mes: "))
     
     encontrados = aniversario_cidades(dia, mes, cidades)
     
