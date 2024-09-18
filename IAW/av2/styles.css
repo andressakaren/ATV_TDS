@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+body {
+    background-color: #faf6ed;
+    color: #222;
+}
+
+.header h1 {
+    font-family: "Playfair Display SC", georgia, serif;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: #FB5;
+    margin-bottom: 1.5rem;
+}
+
+.nav li a {
+    padding: 10px;
+    margin-right: 10px;
+    color: #222;
+    text-decoration: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+article {
+    display: flex;
+    margin-bottom: 2.5rem;
+    align-items: center;
+}
+
+img {
+    width: 350px;
+}
+
+.topicos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1.5rem;
+}
+
+ h2, p {
+    text-align: justify;
+}
+
+.topicos h2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1rem;
+    color: #e54;
+}
+
+.topicos h2::before {
+    content: '';
+    display: inline-block;
+    background-color: #FB5;
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+}
+
+.topicos p {
+    font-family: helvetica, arial;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+footer {
+    padding: 10px;
+    background-color: #FB5;
+    margin-bottom: 1.5rem;
+    color: #222;
+    text-decoration: none;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+footer h2{
+    margin: 0;
+    padding: 10px;
+    margin-right: 10px;
+    color: #222;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-align: end;
+}
