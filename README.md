@@ -12,4 +12,4 @@ Atividades realizadas durante o curso técnico em Desenvolvimento de Sistemas - 
 ### 2° Período
 
 - Programação Orientada a Objeto - POO
-  
+- Programação Web e Frontend - PWF
