@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios propostos 11</title>
+</head>
+<body>
+    <h1 id="titulo">Endereço:</h1>
+    <h2>Logradouro:</h2>
+    <p id="logradouro">Rua Cândido Portinari</p>
+    <h2>Número:</h2>
+    <p id="numero">234</p>
+    <h2>Bairro:</h2>
+    <p id="bairro">Lourival Parente</p>
+    <h2>Complemento:</h2>
+    <p id="complemento">Próximo da Ceasa</p>
+    <h2>Cidade:</h2>
+    <p id="cidade">Teresina</p>
+
+    <script>
+        var logradouro = document.getElementById('logradouro').innerHTML;
+        var numero = document.getElementById('numero').innerHTML;
+        var bairro = document.getElementById('bairro').innerHTML;
+        var complemento = document.getElementById('complemento').innerHTML;
+        var cidade = document.getElementById('cidade').innerHTML;
+        document.write('<p>' + logradouro + ', ' + numero + ', ' + complemento + ' - ' + bairro + '.' + cidade + '.');
+    </script>   
+</body>
+</html>
