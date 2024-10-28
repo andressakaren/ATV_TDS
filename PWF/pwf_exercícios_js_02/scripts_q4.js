@@ -18,15 +18,15 @@ function textToLowerCase() {
     resultado2.innerHTML = `Resultado = ${resposta2.toLowerCase()}`
 }
 
-// var botao3 = document.getElementById('botao3')
-// botao3.addEventListener('click', textReplace)
+var botao3 = document.getElementById('botao3')
+botao3.addEventListener('click', textReplace)
 
-// function textReplace() {
-//     var resultado3 = document.getElementById('resultado3')
-//     var texto3 = document.getElementById('texto3')
-//     var resposta3 = texto3.value
-//     resultado3.innerHTML = `Resultado = ${resposta3.replace()}`
-// }
+function textReplace() {
+    var resultado3 = document.getElementById('resultado3')
+    var texto3 = document.getElementById('texto3')
+    var resposta3 = texto3.value
+    resultado3.innerHTML = `Resultado = ${resposta3.replace('a','@').replace('e', '3').replace('i', '1').replace('o','0')}`
+}
 
 var botao4 = document.getElementById('botao4')
 botao4.addEventListener('click', textTrim)
