@@ -16,15 +16,14 @@ class Veiculos:
         self.velocidade_atual = 0
 
     def __str__(self):  # imprimir o estado atual do veículo
-        s1 = f'O chassi: {self.chassi}\n'
-        s2 = f'O marca: {self.marca}\n'
-        s3 = f'O modelo: {self.modelo}\n'
-        s4 = f'O ano: {self.ano}\n'
-        s5 = f'A placa: {self.placa}\n'
-        s6 = f'A cor: {self.cor}\n'
-        s7 = f'O proprietario: {self.proprietario}\n'
-        s8 = f'A quilometragem: {self.quilometragem}\n'
-        return s1 + s2 + s3 + s4 + s5 + s6 +s7 + s8
+         return (f'O chassi: {self.chassi}\n'
+                f'O marca: {self.marca}\n'
+                f'O modelo: {self.modelo}\n'
+                f'O ano: {self.ano}\n'
+                f'A placa: {self.placa}\n'
+                f'A cor: {self.cor}\n'
+                f'O proprietario: {self.proprietario}\n'
+                f'A quilometragem: {self.quilometragem}\n') 
     
     def ligar_motor(self):
         self.ligado = True
