@@ -1,3 +1,4 @@
+from datetime import datetime
 # Implementar uma classe Veiculo que represente o registro de um veículo em um sistema de controle de veículos. A atividade deve explorar a criação de construtores, atributos obrigatórios e opcionais, e o uso de métodos para exibir e atualizar as informações do veículo.
 
 class Veiculos:
@@ -5,6 +6,9 @@ class Veiculos:
         self.chassi = chassi
         self.marca = marca
         self.modelo = modelo
+        # validar o ano (Se não verdadeiro, ou seja, se falso: print(invalido))
+        if not self.validar_ano(ano):
+            raise ValueError('Ano inválido')
         self.ano = int(ano)
         
         self.placa = input('Informe a placa: ') or placa
@@ -24,6 +28,15 @@ class Veiculos:
                 f'A cor: {self.cor}\n'
                 f'O proprietario: {self.proprietario}\n'
                 f'A quilometragem: {self.quilometragem}\n') 
+    
+    def validar_ano(self, data):
+        try:
+            # tentar converter o ano para o formato 9999
+            ano = datetime.strptime(data, '%Y')
+            return ano
+        except:
+            # se tiver um erro, a data não é válida
+            return False
     
     def ligar_motor(self):
         self.ligado = True
@@ -63,7 +76,6 @@ class Veiculos:
         else:
             print('Não pode abrir a porta enquanto acelera o veiculo!')
             
-
 # cirar um objeto
 carro1 = Veiculos('9BD111060T5002156', 'volkswagen', 'Gol', '2010')
 print(carro1)
