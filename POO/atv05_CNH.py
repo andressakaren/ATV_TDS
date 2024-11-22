@@ -32,6 +32,8 @@ class ValidarCNH:
         self.data_validade = data_validade
        
         # Mutáveis
+        if not self.validar_categorias(categoria):
+            raise ValueError(f'Categoria inválida: {categoria}')
         self.categoria = categoria
            
     def validar_cpf(self):
@@ -72,6 +74,13 @@ class ValidarCNH:
             data = datetime.strptime(data_str, '%d/%m/%Y')
             return True
         except ValueError:
+            return False
+
+    def validar_categorias(self, categoria_str):
+        
+        if categoria_str.lower() in ['a', 'b', 'c', 'd', 'e', 'ab']:
+            return True
+        else:
             return False
         
     def __str__(self):
