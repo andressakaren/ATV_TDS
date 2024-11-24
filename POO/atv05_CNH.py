@@ -76,12 +76,9 @@ class ValidarCNH:
         except ValueError:
             return False
 
-    def validar_categorias(self, categoria_str):
-        
-        if categoria_str.lower() in ['a', 'b', 'c', 'd', 'e', 'ab']:
-            return True
-        else:
-            return False
+    def validar_categorias(self, categoria_str):       
+        return categoria_str.lower() in ['a', 'b', 'c', 'd', 'e', 'ab']
+
         
     def __str__(self):
         return (f'Registro: {self.registro}\n'
