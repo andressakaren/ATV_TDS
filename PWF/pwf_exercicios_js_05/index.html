@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts.js" defer></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            visibility: hidden;
+        }
+
+        body {
+            color: black;
+            background-color: white;
+        }
+
+        .caixa {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+        }
+
+        .novoEstilo {
+            background-color: lightgreen;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manipulando CSS via DOM</h1>
+    <p>Crie uma funcionalidade que exibe/oculta um determinado componente na tela.</p>
+    <button id="aparecerImagem">Aparecer/Esconder a imagem</button>
+    <br>
+    <br>
+    <div class="box" id="box"></div>
+
+    <p>Manipulando Tamanho da Fonte</p>
+    <p id="texto">Mudar o tamanho desse texto aqui!!!</p>
+    <button id="aumentarFonte">Aumentar Fonte</button>
+    <button id="reduzirFonte">Reduzir Fonte</button>
+
+    <p>Alterar para Modo Noturno</p>
+    <input type="text" id="hora" placeholder="Digite uma hora:">
+    <button id="verificarHora">Alterar</button>
+
+    <p>Alterar Estilo com Classe CSS</p>
+    <p>Altere a classe usando: caixaClasse.classList.toggle('novoEstilo')</p>
+    <button id="alterarClasse">Alterar Estilo</button>
+    <div id="caixaClasse" class="caixa">Texto com estilo alternado!</div>
+</body>
+
+</html>
