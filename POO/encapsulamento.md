@@ -213,3 +213,7 @@ except ValueError as e:
 | Propósito            | Criar uma propriedade de leitura (get). | Criar uma propriedade de escrita (set). |
 | Uso                  | Usado para acessar valores.     | Usado para modificar valores. |
 | Exemplo de sintaxe    | `@property\ndef atributo(self): ...` | `@atributo.setter\ndef atributo(self, valor): ...` |
+
+## Dúvidas
+
+Questão do cartão de estacionamento: Tem como eu fazer um try except antes de tentar executar um método, por exemplo na propria classe ao inves de ser só no main. Por exemplo, pra eu ter as informações de erro na hora de verificar o cart2.entrada, precisei fazer um try except na hora e não dentro da criação da classe;
