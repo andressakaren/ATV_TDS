@@ -137,7 +137,7 @@ cart1 = CartaoEstacionamento('09/11/2024 10:59')
 
 # tentando entrar com data formato inválido
 cart2 = CartaoEstacionamento('09/11/28 10:59')
-print(cart2) 
+# print(cart2) 
     # SAÍDA
     # Número cartão: Não é possível gerar numero do cartão. Data e/ou hora inválida!
     # Data e hora entrada: None
