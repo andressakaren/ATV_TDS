@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Demonstração</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .output {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Site API demonstração</h1>
+  <div class="container">
+    <h2>Buscar Temperaturas</h1>
+    <div class="barraPesquisa">
+      <input type="text" id="cidade" placeholder="Digite o nome da cidade">
+      <button id="weatherBtn">Obter Clima</button>
+    </div>
+    <div id="weatherOutput" class="output">
+      <!-- Resultado será exibido aqui -->
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Criar Usuário Fictício (ReqRes)</h2>
+    <button id="reqresBtn">Criar Usuário</button>
+    <div id="reqresOutput" class="output"></div>
+  </div>
+
+  <div class="container">
+    <h2>Fato Sobre Gatos (Cat Facts)</h2>
+    <button id="catFactBtn">Obter Fato</button>
+    <div id="catFactOutput" class="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
