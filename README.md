@@ -13,3 +13,4 @@ Atividades realizadas durante o curso técnico em Desenvolvimento de Sistemas - 
 
 - Programação Orientada a Objeto - POO
 - Programação Web e Frontend - PWF
+- Banco de Dados - BD
