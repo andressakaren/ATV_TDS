@@ -36,3 +36,41 @@ class ClasseExecutiva(ClasseVoo):
         
     def calcular_preco(self):
         return self.preco + 1000
+    
+# PassagemAerea: o Registrar uma passagem comprada por um passageiro.
+# o Exibir os detalhes da passagem.
+
+class PassagemAerea:
+    def __init__(self, passageiro, classe):
+        self.passageiro = passageiro
+        self.classe = classe
+        self.preco = classe.calcular_preco()
+        
+    def exibirDetalhes(self):
+        detalhes = f'Passageiro: {self.passageiro}\n'
+        
+        # Tipo de classe (????)
+        if isinstance(self.classe, ClasseEconomica): # saber se a classe é instancia das subclasses economica ou executiva
+            detalhes += f'Bagagem incluída: {'Sim' if self.classe.bagagem_incluida else 'Não'}\n'
+            
+        elif isinstance(self.classe, ClasseExecutiva):
+            detalhes += f'Serviço de Bordo: {self.classe.servico_bordo}.\n'
+            
+        print(detalhes)
+        
+                    
+# Voo: o Registrar múltiplas passagens para diferentes passageiros.
+# o Calcular o valor total arrecadado pelo voo.
+
+class Voo:
+    def __init__(self, numero, origem, destino):
+        self.numero = numero
+        self.origem = origem
+        self.destino = destino
+        self.passagem = []
+        
+    def adicinar_passagem():
+        ...
+        
+       
+    
