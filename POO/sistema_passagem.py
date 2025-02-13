@@ -1,3 +1,4 @@
+import re
 # LEMBRAR DE USAR ENCAPSULAMENTO
 
 # CompanhiaAerea:
@@ -110,8 +111,51 @@ class PassagemAerea:
 
 class Passageiro:
     def __init__(self, nome, documento):
-        self.nome = nome        
-        self.documento = documento
+        self.nome = nome
+        while True:  
+            self.documento = documento 
+            if self.verificar_cpf():
+                break  
+            print("CPF inválido! Tente novamente.")
+            documento = input("Digite um CPF válido: ")
+
+    def verificar_cpf(self):
+        cpf_limpo = re.sub(r'[^0-9]', '', self.documento)
+
+        if len(cpf_limpo) != 11:
+            print('Insira um CPF com 11 dígitos para ser válido')
+            return False
+
+        if cpf_limpo == cpf_limpo[0] * len(cpf_limpo):
+            print('Você enviou dados sequenciais.')
+            return False
+
+        ### PRIMEIRO DÍGITO
+        nove_digitos = cpf_limpo[:9]
+        resultado_dig1 = 0
+        contador_regressivo_1 = 10
+        for digito in nove_digitos:
+            resultado_dig1 += int(digito) * contador_regressivo_1
+            contador_regressivo_1 -= 1  
+
+        resto_div11_dig1 = (resultado_dig1 * 10) % 11
+        digito1_correto = resto_div11_dig1 if resto_div11_dig1 < 10 else 0
+
+        ### SEGUNDO DÍGITO
+        dez_digitos = nove_digitos + str(digito1_correto)
+        resultado_dig2 = 0
+        contador_regressivo_2 = 11
+        for digito in dez_digitos:
+            resultado_dig2 += int(digito) * contador_regressivo_2
+            contador_regressivo_2 -= 1  
+
+        resto_div11_dig2 = (resultado_dig2 * 10) % 11
+        digito2_correto = resto_div11_dig2 if resto_div11_dig2 < 10 else 0
+
+        ### VALIDAÇÃO DO CPF
+        cpf_gerado_pelo_calculo = f'{nove_digitos}{digito1_correto}{digito2_correto}'
+
+        return cpf_limpo == cpf_gerado_pelo_calculo
         
 # ClasseVoo: Superclasse que representa uma classe de passagem aérea, com um preço base associado. Métodos: calcular_preco(): Retorna o preço da passagem.       
 
