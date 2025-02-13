@@ -1,4 +1,5 @@
 import re
+
 # LEMBRAR DE USAR ENCAPSULAMENTO
 
 # CompanhiaAerea:
@@ -7,11 +8,25 @@ import re
 
 class CompanhiaAerea:
     def __init__(self, nome):
-        self.nome = nome
-        self.voos = []
+        self._nome = nome
+        self._voos = []
         
+    @property
+    def nome(self):
+        return self._nome
+    
+    @nome.setter
+    def nome(self, valor):
+        if not valor.strip():
+            print("Nome da companhia não pode ser vazio!")
+        else:
+            self._nome = valor
+
+    @property
+    def voos(self):
+        return self._voos
+    
     def adicionar_voo(self, voo):
-        
         for v in self.voos:
             if v.numero == voo.numero:
                 print(f"ERRO: O voo com número {voo.numero} já está cadastrado!")
@@ -27,7 +42,7 @@ class CompanhiaAerea:
         total_arrecadado_geral = 0
         
         if len(self.voos) == 0:
-                print('Nenhum voo cadastrado!')
+            print('Nenhum voo cadastrado!')
         else:
             for voo in self.voos:
                 voo.exibir_detalhes() # METODO EXIBIR DETALHES POSTERIORMENTE NA CLASSE VOO
@@ -35,17 +50,45 @@ class CompanhiaAerea:
             print('-' * 70)
         
         print(f'\nTotal arrecadado geral: R$ {total_arrecadado_geral:.2f}'.upper())
-            
+
 # Voo: o Registrar múltiplas passagens para diferentes passageiros.
 # o Calcular o valor total arrecadado pelo voo.
 
 class Voo:
     def __init__(self, numero, origem, destino):
-        self.numero = numero
-        self.origem = origem
-        self.destino = destino
-        self.passagens = []                
+        self._numero = numero
+        self._origem = origem
+        self._destino = destino
+        self._passagens = [] 
         
+    @property
+    def numero(self):
+        return self._numero
+
+    @numero.setter
+    def numero(self, valor):
+        self._numero = valor
+        
+    @property
+    def origem(self):
+        return self._origem
+
+    @origem.setter
+    def origem(self, valor):
+        self._origem = valor
+        
+    @property
+    def destino(self):
+        return self._destino
+
+    @destino.setter
+    def destino(self, valor):
+        self._destino = valor
+        
+    @property
+    def passagens(self):
+        return self._passagens
+    
     def adicionar_passagem(self, passageiro, classe):
         if len(self.passagens) >= 4: # LIMITE TESTE - VOO DE 4 PESSOAS
             print(f"\nErro: Voo {self.numero} está lotado. O passageiro {passageiro.nome} não foi incluido no voo.\n")
@@ -55,17 +98,9 @@ class Voo:
         # print para verificação
         print(f'Passagem registrada para {passageiro.nome} no voo {self.numero} com destino: {self.destino}.')
         print('-' * 70)
-               
+        
     def calcular_total_arrecadado(self):
-        # lista_precos = []
-        # total = sum(lista_precos)
-        # for passagem in self.passagens:
-        #     lista_precos.append(passagem.preco)
-        # return total
         return sum(passagem.preco for passagem in self.passagens)
-    
-    # def total_arrecadado(self):
-    #     return f'Total arrecadado: R$ {self.calcular_total_arrecadado():.2f}'  
     
     def exibir_detalhes(self):
         print(f'Voo {self.numero} ({self.origem} -> {self.destino})\n')
@@ -79,15 +114,27 @@ class Voo:
                 print('-' * 70)            
         
         print(f'Total arrecadado para este voo: R$ {self.calcular_total_arrecadado():.2f}')               
-                    
+
 # PassagemAerea: o Registrar uma passagem comprada por um passageiro.
 # o Exibir os detalhes da passagem.
 
 class PassagemAerea:
     def __init__(self, passageiro, classe):
-        self.passageiro = passageiro
-        self.classe = classe
-        self.preco = classe.calcular_preco()
+        self._passageiro = passageiro
+        self._classe = classe
+        self._preco = classe.calcular_preco()
+        
+    @property
+    def passageiro(self):
+        return self._passageiro
+    
+    @property
+    def classe(self):
+        return self._classe
+
+    @property
+    def preco(self):
+        return self._preco
                 
     def exibir_detalhes(self):
         detalhes = f'Passageiro: {self.passageiro.nome}\n'
@@ -100,7 +147,6 @@ class PassagemAerea:
         elif isinstance(self.classe, ClasseExecutiva):
             detalhes += 'Tipo de Classe: Executiva\n'
             detalhes += f'Documento: {self.passageiro.documento}\n'
-            
             detalhes += f'Serviço de Bordo: {self.classe.servico_bordo}.\nClasse Executiva.'
          
         detalhes += f'Preço: R$ {self.preco:.2f}\n'
@@ -111,14 +157,22 @@ class PassagemAerea:
 
 class Passageiro:
     def __init__(self, nome, documento):
-        self.nome = nome
+        self._nome = nome
+        self._documento = documento
         while True:  
-            self.documento = documento 
             if self.verificar_cpf():
                 break  
             print("CPF inválido! Tente novamente.")
-            documento = input("Digite um CPF válido: ")
-
+            self._documento = input("Digite um CPF válido: ")
+        
+    @property
+    def nome(self):
+        return self._nome
+    
+    @property
+    def documento(self):
+        return self._documento
+    
     def verificar_cpf(self):
         cpf_limpo = re.sub(r'[^0-9]', '', self.documento)
 
@@ -161,7 +215,11 @@ class Passageiro:
 
 class ClasseVoo:
     def __init__(self, preco):
-        self.preco = preco
+        self._preco = preco
+        
+    @property
+    def preco(self):
+        return self._preco
         
     def calcular_preco(self):
         return self.preco
@@ -170,21 +228,31 @@ class ClasseVoo:
 
 class ClasseEconomica(ClasseVoo): # herda da classeVoo que é a superclasse
     def __init__(self, preco, bagagem_incluida):
-        super().__init__(preco) # pra chamar os metodos da ckasse pai. Sem ele teria que reescrever a logica pra poder usar o preco aqui 
-        self.bagagem_incluida = bagagem_incluida
+        super().__init__(preco) # pra chamar os metodos da classe pai. Sem ele teria que reescrever a logica pra poder usar o preco aqui 
+        self._bagagem_incluida = bagagem_incluida
         
+    @property
+    def bagagem_incluida(self):
+        return self._bagagem_incluida
+    
     def calcular_preco(self):
         return self.preco + (200 if self.bagagem_incluida else 0)
     
 # ClasseExecutiva possui um atributo servico_bordo (ex.: "Refeição completa", "Lanche rápido").
+
 class ClasseExecutiva(ClasseVoo):
     def __init__(self, preco, servico_bordo):
         super().__init__(preco)
-        self.servico_bordo = servico_bordo
+        self._servico_bordo = servico_bordo
           
+    @property
+    def servico_bordo(self):
+        return self._servico_bordo
+    
     def calcular_preco(self):
         return self.preco + 1000
     
+
 
 def menu_interativo(companhia):
     while True:
@@ -192,11 +260,12 @@ def menu_interativo(companhia):
         print("1. Adicionar um voo")
         print("2. Listar todos os voos programados")
         print("3. Adicionar passagem a um voo")
-        print("4. Sair")
+        print("4. Exibir informações da companhia")
+        print("5. Exibir informações de um voo")
+        print("6. Sair\n")
         
         opcao = input("Escolha uma opção: ")
 
-        
         if opcao == "1":
             numero = input("Número do voo: ")                
             origem = input("Origem do voo: ")
@@ -205,7 +274,6 @@ def menu_interativo(companhia):
             companhia.adicionar_voo(voo)
         elif opcao == "2":
             companhia.listar_voos()
-      
         elif opcao == "3":
             numero_voo = input("Informe o número do voo: ")
             voo_encontrado = None
@@ -221,7 +289,7 @@ def menu_interativo(companhia):
                 print("1. Econômica sem bagagem (R$ 500)")
                 print("2. Econômica com bagagem (R$ 700)")
                 print("3. Executiva (R$ 1500 + Refeição completa)")
-              
+
                 classe_opcao = input("Opção de classe: ")
                 if classe_opcao == "1":
                     classe = ClasseEconomica(500, False)
@@ -235,16 +303,31 @@ def menu_interativo(companhia):
                 voo_encontrado.adicionar_passagem(passageiro, classe)
             else:
                 print("Voo não encontrado.")
-      
         elif opcao == "4":
+            # Exibe informações sobre a companhia
+            print(f"\nInformações da companhia {companhia.nome}:")
+            print(f"Total de voos programados: {len(companhia.voos)}")
+            print("-" * 70)
+        elif opcao == "5":
+            # Exibe informações de um voo específico
+            numero_voo = input("Informe o número do voo para ver os detalhes: ")
+            voo_encontrado = None
+            for voo in companhia.voos:
+                if voo.numero == numero_voo:
+                    voo_encontrado = voo
+                    break
+            if voo_encontrado:
+                voo_encontrado.exibir_detalhes()
+            else:
+                print("Voo não encontrado.")
+        elif opcao == "6":
             print("Encerrando o programa...")
             break
-      
         else:
             print("Opção inválida. Tente novamente.")
+
+
 # Criar uma companhia
 companhia = CompanhiaAerea("Sky Airlines")
 # Iniciar o menu interativo
-
 menu_interativo(companhia)
-
