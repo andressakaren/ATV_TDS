@@ -98,10 +98,13 @@ class PassagemAerea:
                 
         if isinstance(self.classe, ClasseEconomica): 
             detalhes += 'Tipo de Classe: Econômica\n'
+            detalhes += f'Documento {self.passageiro.documento}\n'
             detalhes += f'Bagagem incluída: {'Sim' if self.classe.bagagem_incluida else 'Não'}\n'
-                   
+                               
         elif isinstance(self.classe, ClasseExecutiva):
             detalhes += 'Tipo de Classe: Executiva\n'
+            detalhes += f'Documento {self.passageiro.documento}\n'
+            
             detalhes += f'Serviço de Bordo: {self.classe.servico_bordo}.\nClasse Executiva.'
          
         detalhes += f'Preço: R$ {self.preco:.2f}\n'
