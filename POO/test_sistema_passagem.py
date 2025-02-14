@@ -8,9 +8,9 @@ def test_criar_companhia_valida():
     companhia = CompanhiaAerea("Sky Airlines")
     assert companhia.nome == "Sky Airlines"
 
-# def test_criar_companhia_nome_vazio():
-#     companhia = CompanhiaAerea("")
-#     assert companhia.nome != ""  # A companhia não deve ser criada com nome vazio
+def test_criar_companhia_nome_vazio():  
+    with pytest.raises(Exception):  # A companhia não deve ser criada com nome vazio
+        companhia = CompanhiaAerea("")  
 
 def test_adicionar_voo_unico():
     companhia = CompanhiaAerea("Sky Airlines")
