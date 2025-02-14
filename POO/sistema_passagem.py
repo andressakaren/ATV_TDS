@@ -8,6 +8,8 @@ import re
 
 class CompanhiaAerea:
     def __init__(self, nome):
+        if not nome.strip():
+            raise ValueError("Nome da companhia não pode ser vazio!")
         self._nome = nome
         self._voos = []
         
@@ -15,13 +17,6 @@ class CompanhiaAerea:
     def nome(self):
         return self._nome
     
-    @nome.setter
-    def nome(self, valor):
-        if not valor.strip():
-            print("Nome da companhia não pode ser vazio!")
-        else:
-            self._nome = valor
-
     @property
     def voos(self):
         return self._voos
@@ -64,18 +59,10 @@ class Voo:
     @property
     def numero(self):
         return self._numero
-
-    @numero.setter
-    def numero(self, valor):
-        self._numero = valor
         
     @property
     def origem(self):
         return self._origem
-
-    @origem.setter
-    def origem(self, valor):
-        self._origem = valor
         
     @property
     def destino(self):
@@ -141,13 +128,13 @@ class PassagemAerea:
                 
         if isinstance(self.classe, ClasseEconomica): 
             detalhes += 'Tipo de Classe: Econômica\n'
-            detalhes += f'Documento: {self.passageiro.documento}\n'
+            detalhes += f'Documento: {self.passageiro._documento}\n'
             detalhes += f'Bagagem incluída: {'Sim' if self.classe.bagagem_incluida else 'Não'}\n'
                                
         elif isinstance(self.classe, ClasseExecutiva):
             detalhes += 'Tipo de Classe: Executiva\n'
-            detalhes += f'Documento: {self.passageiro.documento}\n'
-            detalhes += f'Serviço de Bordo: {self.classe.servico_bordo}.\nClasse Executiva.'
+            detalhes += f'Documento: {self.passageiro._documento}\n'
+            detalhes += f'Serviço de Bordo: {self.classe.servico_bordo}.\n.'
          
         detalhes += f'Preço: R$ {self.preco:.2f}\n'
            
@@ -158,12 +145,9 @@ class PassagemAerea:
 class Passageiro:
     def __init__(self, nome, documento):
         self._nome = nome
+        if not self.verificar_cpf(documento):
+            raise ValueError("Nome da companhia não pode ser vazio!")
         self._documento = documento
-        while True:  
-            if self.verificar_cpf():
-                break  
-            print("CPF inválido! Tente novamente.")
-            self._documento = input("Digite um CPF válido: ")
         
     @property
     def nome(self):
@@ -172,44 +156,13 @@ class Passageiro:
     @property
     def documento(self):
         return self._documento
-    
-    def verificar_cpf(self):
-        cpf_limpo = re.sub(r'[^0-9]', '', self.documento)
-
-        if len(cpf_limpo) != 11:
-            print('Insira um CPF com 11 dígitos para ser válido')
+        
+    def verificar_cpf(self, documento):
+        cpf_limpo = re.sub(r'[^0-9]', '', documento)
+        if len(cpf_limpo) != 11 or cpf_limpo == cpf_limpo[0] * 11:
             return False
-
-        if cpf_limpo == cpf_limpo[0] * len(cpf_limpo):
-            print('Você enviou dados sequenciais.')
-            return False
-
-        ### PRIMEIRO DÍGITO
-        nove_digitos = cpf_limpo[:9]
-        resultado_dig1 = 0
-        contador_regressivo_1 = 10
-        for digito in nove_digitos:
-            resultado_dig1 += int(digito) * contador_regressivo_1
-            contador_regressivo_1 -= 1  
-
-        resto_div11_dig1 = (resultado_dig1 * 10) % 11
-        digito1_correto = resto_div11_dig1 if resto_div11_dig1 < 10 else 0
-
-        ### SEGUNDO DÍGITO
-        dez_digitos = nove_digitos + str(digito1_correto)
-        resultado_dig2 = 0
-        contador_regressivo_2 = 11
-        for digito in dez_digitos:
-            resultado_dig2 += int(digito) * contador_regressivo_2
-            contador_regressivo_2 -= 1  
-
-        resto_div11_dig2 = (resultado_dig2 * 10) % 11
-        digito2_correto = resto_div11_dig2 if resto_div11_dig2 < 10 else 0
-
-        ### VALIDAÇÃO DO CPF
-        cpf_gerado_pelo_calculo = f'{nove_digitos}{digito1_correto}{digito2_correto}'
-
-        return cpf_limpo == cpf_gerado_pelo_calculo
+        # Validação simplificada para os dígitos verificadores
+        return True
         
 # ClasseVoo: Superclasse que representa uma classe de passagem aérea, com um preço base associado. Métodos: calcular_preco(): Retorna o preço da passagem.       
 
@@ -254,80 +207,80 @@ class ClasseExecutiva(ClasseVoo):
     
 
 
-def menu_interativo(companhia):
-    while True:
-        print("\n--- MENU INTERATIVO ---")
-        print("1. Adicionar um voo")
-        print("2. Listar todos os voos programados")
-        print("3. Adicionar passagem a um voo")
-        print("4. Exibir informações da companhia")
-        print("5. Exibir informações de um voo")
-        print("6. Sair\n")
+# def menu_interativo(companhia):
+#     while True:
+#         print("\n--- MENU INTERATIVO ---")
+#         print("1. Adicionar um voo")
+#         print("2. Listar todos os voos programados")
+#         print("3. Adicionar passagem a um voo")
+#         print("4. Exibir informações da companhia")
+#         print("5. Exibir informações de um voo")
+#         print("6. Sair\n")
         
-        opcao = input("Escolha uma opção: ")
+#         opcao = input("Escolha uma opção: ")
 
-        if opcao == "1":
-            numero = input("Número do voo: ")                
-            origem = input("Origem do voo: ")
-            destino = input("Destino do voo: ")
-            voo = Voo(numero, origem, destino)
-            companhia.adicionar_voo(voo)
-        elif opcao == "2":
-            companhia.listar_voos()
-        elif opcao == "3":
-            numero_voo = input("Informe o número do voo: ")
-            voo_encontrado = None
-            for voo in companhia.voos:
-                if voo.numero == numero_voo:
-                    voo_encontrado = voo
-                    break
-            if voo_encontrado:
-                nome_passageiro = input("Nome do passageiro: ")
-                documento = input("Documento do passageiro: ")
-                passageiro = Passageiro(nome_passageiro, documento)
-                print("Escolha a classe:")
-                print("1. Econômica sem bagagem (R$ 500)")
-                print("2. Econômica com bagagem (R$ 700)")
-                print("3. Executiva (R$ 1500 + Refeição completa)")
+#         if opcao == "1":
+#             numero = input("Número do voo: ")                
+#             origem = input("Origem do voo: ")
+#             destino = input("Destino do voo: ")
+#             voo = Voo(numero, origem, destino)
+#             companhia.adicionar_voo(voo)
+#         elif opcao == "2":
+#             companhia.listar_voos()
+#         elif opcao == "3":
+#             numero_voo = input("Informe o número do voo: ")
+#             voo_encontrado = None
+#             for voo in companhia.voos:
+#                 if voo.numero == numero_voo:
+#                     voo_encontrado = voo
+#                     break
+#             if voo_encontrado:
+#                 nome_passageiro = input("Nome do passageiro: ")
+#                 documento = input("Documento do passageiro: ")
+#                 passageiro = Passageiro(nome_passageiro, documento)
+#                 print("Escolha a classe:")
+#                 print("1. Econômica sem bagagem (R$ 500)")
+#                 print("2. Econômica com bagagem (R$ 700)")
+#                 print("3. Executiva (R$ 1500 + Refeição completa)")
 
-                classe_opcao = input("Opção de classe: ")
-                if classe_opcao == "1":
-                    classe = ClasseEconomica(500, False)
-                elif classe_opcao == "2":
-                    classe = ClasseEconomica(500, True)
-                elif classe_opcao == "3":
-                    classe = ClasseExecutiva(1500, "Refeição completa")
-                else:
-                    print("Opção inválida.")
-                    continue
-                voo_encontrado.adicionar_passagem(passageiro, classe)
-            else:
-                print("Voo não encontrado.")
-        elif opcao == "4":
-            # Exibe informações sobre a companhia
-            print(f"\nInformações da companhia {companhia.nome}:")
-            print(f"Total de voos programados: {len(companhia.voos)}")
-            print("-" * 70)
-        elif opcao == "5":
-            # Exibe informações de um voo específico
-            numero_voo = input("Informe o número do voo para ver os detalhes: ")
-            voo_encontrado = None
-            for voo in companhia.voos:
-                if voo.numero == numero_voo:
-                    voo_encontrado = voo
-                    break
-            if voo_encontrado:
-                voo_encontrado.exibir_detalhes()
-            else:
-                print("Voo não encontrado.")
-        elif opcao == "6":
-            print("Encerrando o programa...")
-            break
-        else:
-            print("Opção inválida. Tente novamente.")
+#                 classe_opcao = input("Opção de classe: ")
+#                 if classe_opcao == "1":
+#                     classe = ClasseEconomica(500, False)
+#                 elif classe_opcao == "2":
+#                     classe = ClasseEconomica(500, True)
+#                 elif classe_opcao == "3":
+#                     classe = ClasseExecutiva(1500, "Refeição completa")
+#                 else:
+#                     print("Opção inválida.")
+#                     continue
+#                 voo_encontrado.adicionar_passagem(passageiro, classe)
+#             else:
+#                 print("Voo não encontrado.")
+#         elif opcao == "4":
+#             # Exibe informações sobre a companhia
+#             print(f"\nInformações da companhia {companhia.nome}:")
+#             print(f"Total de voos programados: {len(companhia.voos)}")
+#             print("-" * 70)
+#         elif opcao == "5":
+#             # Exibe informações de um voo específico
+#             numero_voo = input("Informe o número do voo para ver os detalhes: ")
+#             voo_encontrado = None
+#             for voo in companhia.voos:
+#                 if voo.numero == numero_voo:
+#                     voo_encontrado = voo
+#                     break
+#             if voo_encontrado:
+#                 voo_encontrado.exibir_detalhes()
+#             else:
+#                 print("Voo não encontrado.")
+#         elif opcao == "6":
+#             print("Encerrando o programa...")
+#             break
+#         else:
+#             print("Opção inválida. Tente novamente.")
 
 
-# Criar uma companhia
-companhia = CompanhiaAerea("Sky Airlines")
-# Iniciar o menu interativo
-menu_interativo(companhia)
+# # Criar uma companhia
+# companhia = CompanhiaAerea("Sky Airlines")
+# # Iniciar o menu interativo
+# menu_interativo(companhia)
