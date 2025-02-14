@@ -154,8 +154,9 @@ class Passageiro:
     @property
     def documento(self):
         return self._documento
-        
-    def verificar_cpf(self, documento):
+     
+    @staticmethod   
+    def verificar_cpf(documento):
         cpf_limpo = re.sub(r'[^0-9]', '', documento)
         if len(cpf_limpo) != 11 or cpf_limpo == cpf_limpo[0] * 11:
             return False

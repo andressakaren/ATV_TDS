@@ -160,7 +160,8 @@ class Passageiro:
     def documento(self):
         return self._documento
 
-    def verificar_cpf(self, documento):
+    @staticmethod
+    def verificar_cpf(documento):
         cpf_limpo = re.sub(r'[^0-9]', '', documento)
         if len(cpf_limpo) != 11 or cpf_limpo == cpf_limpo[0] * 11:
             return False
@@ -239,6 +240,11 @@ def menu_interativo(companhia):
             if voo_encontrado:
                 nome_passageiro = input("Nome do passageiro: ")
                 documento = input("Documento do passageiro: ")
+                
+                if not Passageiro.verificar_cpf(documento):
+                    print("CPF inválido! Retornando ao menu principal...\n")
+                    continue
+                
                 passageiro = Passageiro(nome_passageiro, documento)
                 print("Escolha a classe:")
                 print("1. Econômica sem bagagem (R$ 500)")
