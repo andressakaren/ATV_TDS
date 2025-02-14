@@ -65,10 +65,6 @@ class Voo:
     @property
     def destino(self):
         return self._destino
-
-    @destino.setter
-    def destino(self, valor):
-        self._destino = valor
         
     @property
     def passagens(self):
