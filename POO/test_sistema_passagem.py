@@ -64,13 +64,16 @@ def test_adicionar_passagem_voo_lotado():
     passageiro5 = Passageiro("Pedro", "12345678905")
     
     classe = ClasseEconomica(500, False)
+    classe2 = ClasseEconomica(500, True)
     voo.adicionar_passagem(passageiro1, classe)
     voo.adicionar_passagem(passageiro2, classe)
     voo.adicionar_passagem(passageiro3, classe)
-    voo.adicionar_passagem(passageiro4, classe)
+    voo.adicionar_passagem(passageiro4, classe2)
     voo.adicionar_passagem(passageiro5, classe)  # Deve falhar
 
-    assert len(voo.passagens) == 4  # O voo não pode ter mais de 4 passagens
+    assert voo.adicionar_passagem(passageiro5, classe) == "\nErro: Voo SA123 está lotado. O passageiro Pedro não foi incluido no voo.\n" # O voo não pode ter mais de 4 passagens
+    assert len(voo.passagens) == 4
+    assert voo.calcular_total_arrecadado() == 2200
 
 def test_calcular_total_arrecadado():
     voo = Voo("SA123", "São Paulo", "Rio de Janeiro")

@@ -71,9 +71,8 @@ class Voo:
         return self._passagens
     
     def adicionar_passagem(self, passageiro, classe):
-        if len(self.passagens) >= 4: # LIMITE TESTE - VOO DE 4 PESSOAS
-            print(f"\nErro: Voo {self.numero} está lotado. O passageiro {passageiro.nome} não foi incluido no voo.\n")
-            return
+        if len(self.passagens) >= 4: # LIMITE TESTE - VOO DE 4 PESSOAS           
+            return f"\nErro: Voo {self.numero} está lotado. O passageiro {passageiro.nome} não foi incluido no voo.\n"
         passagem = PassagemAerea(passageiro, classe)
         self.passagens.append(passagem)
         # print para verificação
