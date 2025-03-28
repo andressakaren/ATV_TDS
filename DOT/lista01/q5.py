@@ -7,29 +7,33 @@
 
 def peso_ideal(altura, sexo):
     if sexo == 1:
-        peso_mulheres = (62.1 * altura) - 44.7
-        return round(peso_mulheres, 2)
+        return round((62.1 * altura) - 44.7, 2)
     if sexo == 2:
-        peso_homens = (72.7 * altura) - 58
-        return round(peso_homens, 2)
+        return round((72.7 * altura) - 58, 2)
 
 
+# verificar altura
 while True:
     try:
         altura = float(input('Digite a altura: '))
-        sexo = int(
-            input('Digite o sexo, sendo: \n1 - feminino \n2 - masculino \n>'))
-        if sexo not in [1, 2]:
-            print('Valor inválido!')
-            continue
-
-        if sexo == 1:
-            print(
-                f'O peso ideal para MULHERES baseado na sua altura: {peso_ideal(altura, sexo)}kg')
-        elif sexo == 2:
-            print(
-                f'Peso ideal para HOMENS baseado na sua altura: {peso_ideal(altura, sexo)}kg')
-
-        break
+        if 0 <= altura < 3:
+            break
+        print('Altura inválida!')
     except:
         print('valor inválido. Digite um valor válido.')
+
+
+# verificar valor de entrada para o sexo
+while True:
+    try:
+        sexo = int(input('Digite o sexo, sendo: \n1 - feminino \n2 - masculino \n> '))
+        if sexo == 1 or sexo == 2:
+            break
+        print('Valor inválido!')
+    except:
+        print('valor inválido. Digite um valor válido.')
+
+if sexo == 1:
+    print(f'O peso ideal para MULHERES baseado na sua altura: {peso_ideal(altura, sexo)}kg')
+elif sexo == 2:
+    print(f'Peso ideal para HOMENS baseado na sua altura: {peso_ideal(altura, sexo)}kg')
