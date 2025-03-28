@@ -5,18 +5,17 @@
 
 def calc_fatorial(n):
     mult_fatorial = 1
-    for i in range(n - 1):
-        mult_fatorial *= n - i
+    for i in range(1, n + 1):
+        mult_fatorial *= i 
     return mult_fatorial
 
 
 while True:
     try:
         numero = int(input('Digite o número: '))
-        if numero <= 0:
-            print('valor inválido. Digite um valor válido.')
-            continue
-        print(f'O fatorial do número {numero} é: {calc_fatorial(numero)}')
-        break
+        if numero >= 0:
+            print(f'O fatorial do número {numero} é: {calc_fatorial(numero)}')
+            break
+        print('Numero inválido.')
     except:
         print('valor inválido. Digite um valor válido.')
