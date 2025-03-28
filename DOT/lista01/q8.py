@@ -3,20 +3,26 @@
 def num_ao_cubo(valor):
     return valor ** 3
 
-# verificar S ou N
-while True:
-    try:
-        condicao = input('Digite\n S - SIM, continuar\n N - NÃO continuar\n > ').upper()
+# função para verificar S ou N
+def obter_condicao():
+    while True:
+        condicao = input('Digite\n S - SIM, continuar\n N - NÃO continuar\n > ').strip().upper()
         
-        if condicao == 'N':
-            break        
+        if condicao in ('S', 'N'):
+            return condicao
         
-        if condicao == 'S':
-            numero = float(input('Digite um valor: '))
-            print(num_ao_cubo(numero))
-            
-        print('Digite um valor válido.')
-
-    except:
         print('valor inválido. Digite um valor válido.')
 
+
+# verificar a resposta
+while True:
+    resposta = obter_condicao()
+     
+    if resposta == 'N':
+        break
+
+    try:
+        numero = float(input('Digite um valor: '))
+        print(f'O cubo de {numero} = {num_ao_cubo(numero)}')
+    except:
+        print('Digite um valor válido.')
