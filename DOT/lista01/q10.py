@@ -1,8 +1,7 @@
 # 10. Escreva um programa composto de uma função Max e o programa principal como segue:
-# a) A função Max recebe como parâmetros de entrada dois números inteiros e retorna o maior. Se forem iguais retorna qualquer um deles;
-# b) O programa principal lê 4 séries de 2 números a, b. Para cada série lida imprime o maior dos dois números usando a função Max.
+# a) A função Max recebe como parâmetros de entrada quatro números inteiros e retorna o maior. Se forem iguais retorna qualquer um deles;
+# b) O programa principal lê 4 séries de 4 números a, b, c, d. Para cada série lida imprime o maior dos quatro números usando a função Max.
 
-# fazer a logica depois pra nao usar função q já exite
 def max_(a, b, c, d):
     maior = a 
     if b > maior:
@@ -13,7 +12,7 @@ def max_(a, b, c, d):
         maior = d
     return maior
 
-# receber 2 numeros INTEIROS em 4 series
+# receber 4 numeros INTEIROS em 4 series
 def ler_serie(): 
     while True:
         try:
