@@ -25,7 +25,7 @@ def receber_inteiros(n):
     return lista_total, lista_par, lista_impar
 
 
-lista_total, lista_par, lista_impar = receber_inteiros(5)
+lista_total, lista_par, lista_impar = receber_inteiros(100)
 
 # 1) Faça um programa que grave uma lista de 100 elementos numéricos inteiros e:
 print('Lista total: ', lista_total)
