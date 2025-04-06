@@ -19,8 +19,8 @@ def ler_lista(n, nome_lista):
             print("Valor inválido. Tente novamente.")
     return lista
 
-quantidades = ler_lista(5, 'quantidades')
-precos = ler_lista(5, 'preços')
+quantidades = ler_lista(20, 'quantidades')
+precos = ler_lista(20, 'preços')
 
 faturamentos = calcular_faturamentos(quantidades, precos)
 faturamento_total = sum(faturamentos)
