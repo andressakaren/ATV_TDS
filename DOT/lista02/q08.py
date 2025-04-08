@@ -2,7 +2,7 @@
 # ocorreu a letra ‘A’.
 # OBS: Fazer crítica na entrada do caractere para aceitar somente letras.
 
-# (incompleta)
+## (incompleta)
 
 def lista_letras(n):
     lista = []
