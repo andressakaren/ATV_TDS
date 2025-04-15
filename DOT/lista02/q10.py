@@ -43,5 +43,5 @@ print('Lista original:', lista)
 maior, indice_maior = maior_elemento(lista)
 menor, indice_menor = menor_elemento(lista)
 
-print(f"Maior elemento: {maior}, indice: {indice_maior})")
-print(f"Menor elemento: {menor}, indice: {indice_menor})")
+print(f"Maior elemento: {maior}, indice: {indice_maior}")
+print(f"Menor elemento: {menor}, indice: {indice_menor}")
