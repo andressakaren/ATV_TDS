@@ -15,7 +15,6 @@ def transformar_lista(x):
             y.append(x[i] * 3)
     return y
 
-# Programa principal
 lista_x = gerar_lista()
 lista_y = transformar_lista(lista_x)
 print("Lista X:", lista_x)
