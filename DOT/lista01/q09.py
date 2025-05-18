@@ -7,18 +7,24 @@ def soma_intervalo(n1, n2):
         soma += i
     return soma
 
+def ler_inteiros():
+    while True:
+        try:
+            n1 = int(input('Digite o primeiro numero: '))
+            n2 = int(input('Digite o segundo numero: '))
 
-while True:
-    try:
-        n1 = int(input('Digite o primeiro numero: '))
-        n2 = int(input('Digite o segundo numero: '))
+            if n2 > n1 and n1 >= 0 and n2 >= 0:
+                return n1, n2
 
-        if n2 > n1:
-            break
+            print('Os valores devem ser diferentes de zero e o segundo numero maior que o primeiro!')
+        except:
+            print('Digite um valor válido!')
+            
+def main():
+    n1, n2 = ler_inteiros()
 
-        print('O segundo valor deve ser maior que o primeiro e diferente entre si!')
-    except:
-        print('Digite um valor válido!')
+    print(
+        f'A soma de todos os números inteiros contidos no intervalo [{n1},{n2}] = {soma_intervalo(n1, n2)}.')
 
-print(
-    f'A soma de todos os números inteiros contidos no intervalo [{n1},{n2}] = {soma_intervalo(n1, n2)}.')
+if __name__ == "__main__":
+    main()
