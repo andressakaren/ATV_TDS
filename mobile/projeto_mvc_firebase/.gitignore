@@ -1,0 +1,116 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# Arquivos gerados por Flutter e Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.vs_code/
+.idea/
+.DS_Store
+*.iml
+*.lock
+
+# Logs e arquivos temporários
+*.log
+*.str
+*.bak
+*.tmp
+
+# Arquivos de Build
+build/
+.pub-cache/
+
+# Arquivos específicos da plataforma
+# Android
+android/.gradle/
+android/app/build/
+android/app/.cxx/
+android/app/.externalNativeBuild/
+android/app/src/main/assets/flutter_assets/
+android/local.properties
+android/key.properties
+android/app/src/debug/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/gradle/wrapper/gradle-wrapper.jar
+android/app/google-services.json # Se você usa Firebase, pode querer ignorar este para chaves de produção
+
+# iOS
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/.symlinks/
+ios/Runner/*.xcworkspace/
+ios/Runner/*.xcodeproj/project.xcworkspace/
+ios/Runner/*.xcodeproj/xcuserdata/
+ios/Runner/Generated.xcconfig
+ios/Runner/build/
+ios/Pods/
+ios/.profile_temp
+ios/fastlane/report.xml
+ios/fastlane/screenshots/
+ios/fastlane/test_output/
+ios/Runner.xcarchive
+ios/.flutter-plugins
+ios/.flutter-plugins-dependencies
+ios/.packages
+
+# Web
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+web/
+.firebase/ # Se você usa Firebase Hosting, esta pasta pode ser gerada
+
+# Outros arquivos comuns a serem ignorados
+*.swp
+*~
+.metadata
