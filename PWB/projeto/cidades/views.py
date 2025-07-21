@@ -2,6 +2,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from drf_yasg.utils import swagger_auto_schema
@@ -74,7 +75,7 @@ class CidadeViewSet(OwnerFilterMixin, viewsets.ModelViewSet):
         detail=True, 
         methods=['put'], 
         permission_classes=[IsAuthenticated, IsOwner],
-        parser_classes=['rest_framework.parsers.MultiPartParser']
+        parser_classes=[MultiPartParser, FormParser]
     )
     def upload_foto(self, request, pk=None):
         cidade = self.get_object()
